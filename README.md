@@ -2,7 +2,7 @@
 
 > AI 驱动的在线简历制作工具 — 免费、开源、数据本地处理
 
-**🌐 在线体验：[https://your-username.github.io/resume-studio](https://your-username.github.io/resume-studio)**
+**🌐 在线体验：[https://dxawdc.github.io/resume-builder/](https://dxawdc.github.io/resume-builder/)**
 
 ![简历工坊截图](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-blue)
