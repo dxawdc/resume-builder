@@ -27,7 +27,7 @@
 ## 🚀 快速开始
 
 ### 方式一：直接使用在线版
-访问 **[GitHub Pages 链接](https://your-username.github.io/resume-studio)**，无需安装。
+访问 **[GitHub Pages 链接](https://dxawdc.github.io/resume-builder/)**，无需安装。
 
 ### 方式二：本地运行
 ```bash
