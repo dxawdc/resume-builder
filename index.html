@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="简历工坊 - AI驱动的在线简历制作工具，支持6种精美模版，一键AI优化">
+<meta name="keywords" content="简历,resume,模版,AI优化,在线制作">
+<meta property="og:title" content="简历工坊 · ResumeStudio">
+<meta property="og:description" content="AI驱动的在线简历制作工具">
+<title>简历工坊 · ResumeStudio</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/templates.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Resume<span>工坊</span></div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" id="tab-home" onclick="showPage('home')">选择模版</button>
+      <button class="nav-tab" id="tab-editor" onclick="showPage('editor')">编辑简历</button>
+    </div>
+    <div class="nav-actions">
+      <a href="https://github.com/your-username/resume-studio" target="_blank" class="nav-github" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- =========== HOME PAGE =========== -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-eyebrow">AI 驱动 · 专业简历工坊</div>
+    <h1>打造令人印象深刻<br>的个人简历</h1>
+    <p>上传您的 Word 简历一键套用模版，或直接选择模版从头创建<br>AI 智能优化，让您的经历更具说服力</p>
+    <div class="hero-badges">
+      <span class="badge">✦ 6种精美模版</span>
+      <span class="badge">📄 Word导入</span>
+      <span class="badge">🤖 AI优化</span>
+      <span class="badge">🆓 完全免费</span>
+    </div>
+  </div>
+
+  <!-- Upload Zone -->
+  <div class="upload-section">
+    <div class="upload-zone" id="uploadZone">
+      <div class="upload-icon">📄</div>
+      <h3>上传您的 Word 简历</h3>
+      <p>支持 .docx 格式 · 拖拽或点击上传 · AI 自动解析内容</p>
+      <input type="file" id="fileInput" accept=".docx,.doc">
+      <button class="btn-primary" onclick="document.getElementById('fileInput').click()">选择文件上传</button>
+    </div>
+  </div>
+
+  <div class="divider"><span>或者直接选择模版开始创建</span></div>
+
+  <!-- Templates -->
+  <div class="templates-section">
+    <div class="section-label">精选模版 · 6 种风格</div>
+    <div class="template-grid" id="templateGrid">
+
+      <div class="template-card" data-tpl="classic" onclick="selectTemplate('classic')">
+        <div class="template-preview tpl-classic-preview">
+          <div class="mini-resume" style="width:100%">
+            <div style="text-align:center;border-bottom:0.5px solid #1a1714;padding-bottom:5px;margin-bottom:5px">
+              <div style="font-weight:bold;font-size:9px;font-family:serif">张明远</div>
+              <div style="color:#7a7268;font-size:6px">高级产品经理 · 5年经验</div>
+              <div style="font-size:5px;color:#c8c2b8;margin-top:1px">shanghai@email.com · 138-0000-0000</div>
+            </div>
+            <div style="margin-top:5px">
+              <div style="font-weight:bold;font-size:6px;border-bottom:0.5px solid #1a1714;padding-bottom:1px;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.08em">工作经历</div>
+              <div style="height:2.5px;background:#e4ddd4;border-radius:1px;margin-bottom:2px;width:90%"></div>
+              <div style="height:2.5px;background:#e4ddd4;border-radius:1px;margin-bottom:2px;width:70%"></div>
+              <div style="height:2.5px;background:#e4ddd4;border-radius:1px;margin-bottom:4px;width:80%"></div>
+              <div style="font-weight:bold;font-size:6px;border-bottom:0.5px solid #1a1714;padding-bottom:1px;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.08em">教育背景</div>
+              <div style="height:2.5px;background:#e4ddd4;border-radius:1px;margin-bottom:2px;width:85%"></div>
+              <div style="height:2.5px;background:#e4ddd4;border-radius:1px;margin-bottom:2px;width:60%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">传统经典</div>
+          <div class="template-desc">稳重大方，适合金融、法律等行业</div>
+          <span class="template-tag tag-classic">经典</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+      <div class="template-card" data-tpl="modern" onclick="selectTemplate('modern')">
+        <div class="template-preview" style="padding:0;display:flex;align-items:stretch">
+          <div style="width:38%;background:#2d6b6b;padding:12px 8px;flex-shrink:0">
+            <div style="color:white;font-size:7px;font-weight:bold;margin-bottom:2px">张明远</div>
+            <div style="color:rgba(255,255,255,0.6);font-size:5px;margin-bottom:8px">产品经理</div>
+            <div style="font-size:4.5px;color:rgba(255,255,255,0.4);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em">联系方式</div>
+            <div style="height:2.5px;background:rgba(255,255,255,0.25);border-radius:1px;margin-bottom:2px;width:80%"></div>
+            <div style="height:2.5px;background:rgba(255,255,255,0.25);border-radius:1px;margin-bottom:8px;width:65%"></div>
+            <div style="font-size:4.5px;color:rgba(255,255,255,0.4);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em">技能</div>
+            <div style="height:2.5px;background:rgba(255,255,255,0.25);border-radius:1px;margin-bottom:2px;width:90%"></div>
+            <div style="height:2.5px;background:rgba(255,255,255,0.25);border-radius:1px;margin-bottom:2px;width:75%"></div>
+            <div style="height:2.5px;background:rgba(255,255,255,0.25);border-radius:1px;width:60%"></div>
+          </div>
+          <div style="flex:1;padding:12px 10px;background:#f0f7f7">
+            <div style="font-size:5.5px;text-transform:uppercase;letter-spacing:0.1em;color:#2d6b6b;font-weight:bold;border-bottom:1px solid #b0d8d8;padding-bottom:1px;margin-bottom:3px">工作经历</div>
+            <div style="height:2.5px;background:#c8e0e0;border-radius:1px;margin-bottom:2px;width:90%"></div>
+            <div style="height:2.5px;background:#c8e0e0;border-radius:1px;margin-bottom:2px;width:75%"></div>
+            <div style="height:2.5px;background:#c8e0e0;border-radius:1px;margin-bottom:5px;width:85%"></div>
+            <div style="font-size:5.5px;text-transform:uppercase;letter-spacing:0.1em;color:#2d6b6b;font-weight:bold;border-bottom:1px solid #b0d8d8;padding-bottom:1px;margin-bottom:3px">教育背景</div>
+            <div style="height:2.5px;background:#c8e0e0;border-radius:1px;margin-bottom:2px;width:80%"></div>
+            <div style="height:2.5px;background:#c8e0e0;border-radius:1px;width:60%"></div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">现代双栏</div>
+          <div class="template-desc">清晰专业，适合科技、互联网行业</div>
+          <span class="template-tag tag-modern">现代</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+      <div class="template-card" data-tpl="creative" onclick="selectTemplate('creative')">
+        <div class="template-preview" style="background:#1a1714;flex-direction:column">
+          <div style="color:#c4622d;font-size:10px;font-family:serif;margin-bottom:2px">张明远</div>
+          <div style="color:#c8c2b8;font-size:6px;margin-bottom:6px;letter-spacing:0.05em">高级产品经理</div>
+          <div style="display:flex;gap:6px;flex:1;margin-top:4px">
+            <div style="flex:1">
+              <div style="color:#c4622d;font-size:5px;letter-spacing:0.1em;border-bottom:0.5px solid #c4622d;padding-bottom:1px;margin-bottom:3px">经历</div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;margin-bottom:2px;width:90%"></div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;margin-bottom:2px;width:70%"></div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;width:80%"></div>
+            </div>
+            <div style="flex:0.8">
+              <div style="color:#c4622d;font-size:5px;letter-spacing:0.1em;border-bottom:0.5px solid #c4622d;padding-bottom:1px;margin-bottom:3px">技能</div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;margin-bottom:2px;width:90%"></div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;margin-bottom:2px;width:75%"></div>
+              <div style="height:2.5px;background:#3d3832;border-radius:1px;width:85%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">暗色创意</div>
+          <div class="template-desc">个性鲜明，适合设计、媒体行业</div>
+          <span class="template-tag tag-creative">创意</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+      <div class="template-card" data-tpl="minimal" onclick="selectTemplate('minimal')">
+        <div class="template-preview" style="background:white;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:20px 16px">
+          <div style="color:#1a1714;font-size:10px;font-weight:300;letter-spacing:-0.02em;margin-bottom:2px">张明远</div>
+          <div style="color:#7a7268;font-size:6px;font-weight:300;margin-bottom:10px">高级产品经理</div>
+          <div style="height:0.5px;background:#e4ddd4;width:100%;margin-bottom:10px"></div>
+          <div style="display:grid;grid-template-columns:55px 1fr;gap:6px;width:100%">
+            <div style="font-size:5px;color:#c8c2b8;text-transform:uppercase;letter-spacing:0.08em">经历</div>
+            <div>
+              <div style="height:2.5px;background:#f3f0ea;border-radius:1px;margin-bottom:2px;width:95%"></div>
+              <div style="height:2.5px;background:#f3f0ea;border-radius:1px;margin-bottom:2px;width:80%"></div>
+              <div style="height:2.5px;background:#f3f0ea;border-radius:1px;width:88%"></div>
+            </div>
+            <div style="font-size:5px;color:#c8c2b8;text-transform:uppercase;letter-spacing:0.08em;margin-top:5px">教育</div>
+            <div style="margin-top:5px">
+              <div style="height:2.5px;background:#f3f0ea;border-radius:1px;margin-bottom:2px;width:75%"></div>
+              <div style="height:2.5px;background:#f3f0ea;border-radius:1px;width:60%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">极简留白</div>
+          <div class="template-desc">简洁优雅，适合咨询、学术场景</div>
+          <span class="template-tag tag-minimal">极简</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+      <div class="template-card" data-tpl="executive" onclick="selectTemplate('executive')">
+        <div class="template-preview" style="background:#0f1923;flex-direction:column">
+          <div style="border-bottom:0.5px solid #1e2d3d;padding-bottom:6px;margin-bottom:6px;width:100%">
+            <div style="color:#b8922e;font-size:10px;font-family:serif;margin-bottom:2px">张明远</div>
+            <div style="color:#8a9bb0;font-size:5px;letter-spacing:0.1em;text-transform:uppercase">高级产品经理 · 资深管理层</div>
+          </div>
+          <div style="font-size:4.5px;text-transform:uppercase;letter-spacing:0.12em;color:#b8922e;border-bottom:0.5px solid #1e2d3d;padding-bottom:1px;margin-bottom:3px">EXPERIENCE</div>
+          <div style="height:2.5px;background:#1e2d3d;border-radius:1px;margin-bottom:2px;width:90%"></div>
+          <div style="height:2.5px;background:#1e2d3d;border-radius:1px;margin-bottom:2px;width:75%"></div>
+          <div style="height:2.5px;background:#1e2d3d;border-radius:1px;margin-bottom:5px;width:85%"></div>
+          <div style="font-size:4.5px;text-transform:uppercase;letter-spacing:0.12em;color:#b8922e;border-bottom:0.5px solid #1e2d3d;padding-bottom:1px;margin-bottom:3px">EDUCATION</div>
+          <div style="height:2.5px;background:#1e2d3d;border-radius:1px;margin-bottom:2px;width:80%"></div>
+          <div style="height:2.5px;background:#1e2d3d;border-radius:1px;width:60%"></div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">高管深色</div>
+          <div class="template-desc">气场强大，适合高管、领导职位</div>
+          <span class="template-tag tag-creative">高端</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+      <div class="template-card" data-tpl="academic" onclick="selectTemplate('academic')">
+        <div class="template-preview" style="background:#f8f6f0;flex-direction:column;align-items:center">
+          <div style="text-align:center;width:100%;margin-bottom:6px">
+            <div style="color:#2c3e6e;font-size:9px;font-family:serif;font-weight:bold">张明远</div>
+            <div style="color:#5a6e8a;font-size:5.5px;font-style:italic">产品管理硕士 · 清华大学</div>
+            <div style="height:1.5px;background:linear-gradient(90deg,transparent,#2c3e6e,transparent);margin:4px auto;width:80%"></div>
+          </div>
+          <div style="width:100%">
+            <div style="color:#2c3e6e;font-size:6px;font-family:serif;font-weight:bold;border-bottom:1.5px solid #2c3e6e;padding-bottom:1px;margin-bottom:3px">工作经历</div>
+            <div style="height:2.5px;background:#dce4f0;border-radius:1px;margin-bottom:2px;width:90%"></div>
+            <div style="height:2.5px;background:#dce4f0;border-radius:1px;margin-bottom:5px;width:75%"></div>
+            <div style="color:#2c3e6e;font-size:6px;font-family:serif;font-weight:bold;border-bottom:1.5px solid #2c3e6e;padding-bottom:1px;margin-bottom:3px">学术成果</div>
+            <div style="height:2.5px;background:#dce4f0;border-radius:1px;margin-bottom:2px;width:85%"></div>
+            <div style="height:2.5px;background:#dce4f0;border-radius:1px;width:60%"></div>
+          </div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">学术正式</div>
+          <div class="template-desc">严谨规范，适合学术研究、教育行业</div>
+          <span class="template-tag tag-modern">学术</span>
+        </div>
+        <div class="template-select-badge">✓ 已选</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>简历工坊 ResumeStudio · 开源免费 · <a href="https://github.com/your-username/resume-studio" target="_blank">GitHub</a> · 数据仅在本地处理，不上传任何服务器</p>
+  </footer>
+</div>
+
+<!-- =========== EDITOR PAGE =========== -->
+<div class="page" id="page-editor">
+  <div class="editor-layout" id="editorLayout">
+    <!-- Sidebar -->
+    <div class="editor-sidebar" id="editorSidebar">
+      <div class="sidebar-header">
+        <h3 id="templateLabel">编辑简历</h3>
+        <p id="templateDesc">填写您的个人信息</p>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">基本信息</div>
+        <div class="form-group"><label>姓名</label><input type="text" id="f-name" value="张明远" oninput="updatePreview()"></div>
+        <div class="form-group"><label>职位头衔</label><input type="text" id="f-title" value="高级产品经理" oninput="updatePreview()"></div>
+        <div class="form-group"><label>邮箱</label><input type="text" id="f-email" value="zhangmy@email.com" oninput="updatePreview()"></div>
+        <div class="form-group"><label>电话</label><input type="text" id="f-phone" value="138-0000-0000" oninput="updatePreview()"></div>
+        <div class="form-group"><label>城市</label><input type="text" id="f-city" value="上海" oninput="updatePreview()"></div>
+        <div class="form-group"><label>LinkedIn / 个人网站</label><input type="text" id="f-link" value="linkedin.com/in/zhangmy" oninput="updatePreview()"></div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">个人简介</div>
+        <div class="form-group"><textarea id="f-summary" rows="4" oninput="updatePreview()">5年产品管理经验，专注用户增长与商业化变现。曾主导多个从0到1产品项目，累计服务用户超500万。擅长数据分析与跨团队协作。</textarea></div>
+        <button class="btn-ai" onclick="aiOptimize('summary',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          AI 优化个人简介
+        </button>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">工作经历 1</div>
+        <div class="form-group"><label>公司名称</label><input type="text" id="w1-company" value="字节跳动" oninput="updatePreview()"></div>
+        <div class="form-group"><label>职位</label><input type="text" id="w1-pos" value="高级产品经理" oninput="updatePreview()"></div>
+        <div class="form-group"><label>时间</label><input type="text" id="w1-date" value="2021.06 — 至今" oninput="updatePreview()"></div>
+        <div class="form-group"><label>工作内容</label><textarea id="w1-desc" rows="4" oninput="updatePreview()">主导抖音电商 GMV 增长产品线，设计并落地分层运营体系，带动 Q3 GMV 同比增长 47%；统筹跨端产品迭代，协调 10+ 个研发团队，按期交付率提升至 92%。</textarea></div>
+        <button class="btn-ai" onclick="aiOptimize('work1',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          AI 优化这段经历
+        </button>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">工作经历 2</div>
+        <div class="form-group"><label>公司名称</label><input type="text" id="w2-company" value="阿里巴巴" oninput="updatePreview()"></div>
+        <div class="form-group"><label>职位</label><input type="text" id="w2-pos" value="产品经理" oninput="updatePreview()"></div>
+        <div class="form-group"><label>时间</label><input type="text" id="w2-date" value="2019.07 — 2021.05" oninput="updatePreview()"></div>
+        <div class="form-group"><label>工作内容</label><textarea id="w2-desc" rows="4" oninput="updatePreview()">负责淘宝直播互动功能产品设计，累计优化 15 个核心功能模块，DAU 提升 23%；推动直播数据看板建设，降低运营决策时长 60%。</textarea></div>
+        <button class="btn-ai" onclick="aiOptimize('work2',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          AI 优化这段经历
+        </button>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">教育背景</div>
+        <div class="form-group"><label>学校</label><input type="text" id="edu-school" value="复旦大学" oninput="updatePreview()"></div>
+        <div class="form-group"><label>专业 / 学位</label><input type="text" id="edu-major" value="信息管理与信息系统 · 本科" oninput="updatePreview()"></div>
+        <div class="form-group"><label>时间</label><input type="text" id="edu-date" value="2015.09 — 2019.06" oninput="updatePreview()"></div>
+        <div class="form-group"><label>说明（可选）</label><input type="text" id="edu-note" value="GPA 3.8/4.0 · 优秀毕业生" oninput="updatePreview()"></div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">专业技能</div>
+        <div class="form-group"><label>技能（逗号分隔）</label><textarea id="f-skills" rows="3" oninput="updatePreview()">产品规划, 数据分析, 用户研究, Axure RP, SQL, A/B测试, 跨团队协作, OKR管理</textarea></div>
+      </div>
+
+      <!-- API Key Section -->
+      <div class="form-section api-key-section">
+        <div class="form-section-title">AI 设置</div>
+        <div class="form-group">
+          <label>Anthropic API Key <span style="color:#c4622d;font-size:11px">（仅存本地）</span></label>
+          <input type="password" id="api-key" placeholder="sk-ant-..." oninput="saveApiKey()">
+        </div>
+        <p style="font-size:11px;color:var(--ink-muted);margin-top:4px;line-height:1.6">Key 仅保存在您的浏览器本地，不会上传任何服务器。<a href="https://console.anthropic.com" target="_blank" style="color:var(--accent)">获取免费 Key →</a></p>
+        <button class="btn-ai" onclick="quickOptimize('overall')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          一键 AI 全面优化
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Main Preview -->
+    <div class="editor-main">
+      <div class="resume-preview-wrapper">
+        <div class="resume-controls">
+          <div class="resume-controls-left">
+            <button class="btn-secondary" onclick="showPage('home')">← 更换模版</button>
+            <button class="btn-secondary" id="aiPanelToggle" onclick="toggleAIPanel()">✦ AI 助手</button>
+          </div>
+          <button class="btn-export" onclick="exportResume()">🖨 导出打印</button>
+        </div>
+        <div id="resume-canvas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI Panel -->
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-panel-header">
+    <div class="ai-panel-title">AI 简历助手</div>
+    <button class="btn-icon" onclick="toggleAIPanel()">✕</button>
+  </div>
+  <div class="ai-panel-body" id="aiMessages">
+    <div class="ai-message ai">
+      你好！我是 AI 简历优化助手 ✦<br><br>
+      我可以帮你：优化文案表达、量化工作成果、提升关键词匹配、针对特定岗位定制内容。<br><br>
+      <strong>请先在左侧填入您的 Anthropic API Key</strong>，然后点击下方按钮快速优化，或直接告诉我您想改什么。
+    </div>
+  </div>
+  <div class="ai-panel-footer">
+    <div class="ai-quick-actions">
+      <button class="ai-action-btn" onclick="quickOptimize('overall')">✦ 全面优化</button>
+      <button class="ai-action-btn" onclick="quickOptimize('quantify')">📊 量化成果</button>
+      <button class="ai-action-btn" onclick="quickOptimize('keywords')">🔍 关键词</button>
+      <button class="ai-action-btn" onclick="quickOptimize('concise')">✂️ 精简</button>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" type="text" id="aiInput" placeholder="告诉 AI 你想优化什么..." onkeydown="if(event.key==='Enter')sendAIMessage()">
+      <button class="ai-send" onclick="sendAIMessage()">→</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-box">
+    <div class="loading-spinner"></div>
+    <div class="loading-text" id="loadingText">AI 正在解析简历...</div>
+  </div>
+</div>
+
+<script src="js/templates.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
